@@ -1,5 +1,10 @@
 # Callscore
 
+[![CI Status](https://github.com/tariqkistan/Callscore/actions/workflows/ci.yml/badge.svg)](https://github.com/tariqkistan/Callscore/actions/workflows/ci.yml)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/tariqkistan/Callscore?style=social)](https://github.com/tariqkistan/Callscore)
+
 Automated call QA scoring pipeline using GPT-4o with structured outputs. Scores call transcripts against configurable scorecards, validates results with Pydantic, and upserts to SQL.
 
 ## Architecture
