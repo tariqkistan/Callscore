@@ -1,0 +1,53 @@
+[project]
+name = "callscore"
+version = "0.1.0"
+description = "Automated call QA scoring pipeline using GPT-4o"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.40",
+    "azure-functions",
+    "azure-servicebus",
+    "azure-storage-blob",
+    "aiohttp",
+    "sqlalchemy[asyncio]>=2.0",
+    "aiosqlite",
+    "pydantic>=2",
+    "python-dotenv",
+    "structlog",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-mock",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+    "httpx",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+    "eval: marks tests that require real API keys (deselect with '-m \"not eval\"')",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

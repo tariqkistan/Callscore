@@ -1,0 +1,12 @@
+{
+  "call_id": "FX-001",
+  "transcript": "Agent: Hello, this is Sarah from ABC Collections. I'm calling regarding your outstanding balance of $2,500.\nCustomer: Hi Sarah, I've been meaning to call about that.\nAgent: Before we proceed, can you please confirm your date of birth for security purposes?\nCustomer: Sure, it's March 15, 1985.\nAgent: Thank you for confirming. Your balance is $2,500 and it's 60 days past due. Based on what you've told me, I can offer a payment plan of $200/month for 12 months, or if you can pay $1,000 now, we can reduce the balance by 20%. Which works better for you?\nCustomer: The $200/month plan sounds more manageable right now.\nAgent: I understand this is a difficult situation, and I appreciate you working with me to find a solution. Let's set up the payment for the 15th of each month starting next month.\nCustomer: That works perfectly. Thank you for being so understanding.\nAgent: To summarize, you'll make a payment of $200 on the 15th. I'll send you a confirmation email with these details. If you have any questions, you can reach us at 1-800-555-0123. Thank you for your time.",
+  "expected_scores": {
+    "C01": 1.0,
+    "C02": 1.0,
+    "C03": 1.0,
+    "C04": 1.0,
+    "C05": 1.0
+  },
+  "expected_weighted_total_min": 0.90
+}

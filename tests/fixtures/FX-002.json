@@ -1,0 +1,12 @@
+{
+  "call_id": "FX-002",
+  "transcript": "Agent: Your balance is $2,500 and it's 60 days past due. Can you please confirm your date of birth for security purposes?\nCustomer: Sure, it's March 15, 1985.\nAgent: Thank you. Based on your situation, I can offer a payment plan of $200/month for 12 months, or if you can pay $1,000 now, we can reduce the balance by 20%. Which works better for you?\nCustomer: The $200/month plan sounds good.\nAgent: I understand this is a difficult situation. Let's set up the payment for the 15th of each month.\nCustomer: That works.\nAgent: To summarize, you'll make a payment of $200 on the 15th. I'll send you a confirmation email. If you have questions, call 1-800-555-0123. Thank you.",
+  "expected_scores": {
+    "C01": 0.0,
+    "C02": 1.0,
+    "C03": 1.0,
+    "C04": 1.0,
+    "C05": 1.0
+  },
+  "expected_weighted_total_min": 0.70
+}

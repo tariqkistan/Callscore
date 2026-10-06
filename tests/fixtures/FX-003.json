@@ -1,0 +1,12 @@
+{
+  "call_id": "FX-003",
+  "transcript": "Agent: Hello, this is Mike from XYZ Collections. I'm calling regarding your outstanding balance of $3,000.\nCustomer: Hi, I can't talk right now.\nAgent: Before we proceed, can you please confirm your date of birth for security purposes?\nCustomer: It's January 20, 1990.\nAgent: Thank you. Your balance is $3,000 and it's 90 days past due. You need to pay the full amount right now or we'll take legal action. Stop making excuses and pay what you owe or we'll garnish your wages.\nCustomer: That's not fair, I'm trying to work with you.\nAgent: You're being difficult. Just pay the money. We have lawyers ready to sue you if you don't pay immediately.\nCustomer: I'll call you back when I can.\nAgent: Fine, but if you don't pay by tomorrow, you'll regret it. Bye.",
+  "expected_scores": {
+    "C01": 1.0,
+    "C02": 1.0,
+    "C03": 0.0,
+    "C04": 0.0,
+    "C05": 0.0
+  },
+  "expected_weighted_total_min": 0.0
+}

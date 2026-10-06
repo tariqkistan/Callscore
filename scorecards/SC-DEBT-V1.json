@@ -1,0 +1,106 @@
+{
+  "scorecard_id": "SC-DEBT-V1",
+  "version": "1.0",
+  "criteria": [
+    {
+      "id": "C01",
+      "name": "greeting_compliance",
+      "description": "Agent must properly greet the customer and state the purpose of the call",
+      "weight": 0.20,
+      "scoring_type": "binary",
+      "rubric": "1.0 if agent provides a professional greeting and clearly states they are calling about a debt collection matter, 0.0 otherwise",
+      "examples": [
+        {
+          "transcript_snippet": "Hello, this is Sarah from ABC Collections. I'm calling regarding your outstanding balance of $2,500.",
+          "score": 1.0,
+          "reason": "Professional greeting with name, company, and clear purpose stated"
+        },
+        {
+          "transcript_snippet": "Hey, got a minute? You owe money.",
+          "score": 0.0,
+          "reason": "No proper greeting, unprofessional, and unclear purpose"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "identity_verification",
+      "description": "Agent must verify the customer's identity before discussing account details",
+      "weight": 0.25,
+      "scoring_type": "binary",
+      "rubric": "1.0 if agent verifies identity through DOB, address, or last 4 digits of SSN before discussing debt, 0.0 otherwise",
+      "examples": [
+        {
+          "transcript_snippet": "Before we proceed, can you please confirm your date of birth for security purposes?",
+          "score": 1.0,
+          "reason": "Proper identity verification request before discussing sensitive information"
+        },
+        {
+          "transcript_snippet": "Your balance is $2,500 and it's 60 days past due.",
+          "score": 0.0,
+          "reason": "Discussed account details without verifying identity first"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "payment_offer_quality",
+      "description": "Agent offers appropriate payment solutions based on customer's situation",
+      "weight": 0.25,
+      "scoring_type": "scale",
+      "rubric": "1.0 for offering multiple tailored options with clear terms, 0.5 for single generic offer, 0.0 for no offer or inappropriate pressure",
+      "examples": [
+        {
+          "transcript_snippet": "Based on what you've told me, I can offer a payment plan of $200/month for 12 months, or if you can pay $1,000 now, we can reduce the balance by 20%. Which works better for you?",
+          "score": 1.0,
+          "reason": "Multiple tailored options with clear terms and customer choice"
+        },
+        {
+          "transcript_snippet": "You need to pay the full amount right now or we'll take legal action.",
+          "score": 0.0,
+          "reason": "No payment options offered, only threats and pressure"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "empathy_and_tone",
+      "description": "Agent demonstrates empathy and maintains professional, respectful tone throughout",
+      "weight": 0.15,
+      "scoring_type": "scale",
+      "rubric": "1.0 for consistently empathetic and professional tone, 0.5 for mixed tone with some issues, 0.0 for hostile, threatening, or disrespectful behavior",
+      "examples": [
+        {
+          "transcript_snippet": "I understand this is a difficult situation, and I appreciate you working with me to find a solution. Let's see what options we have.",
+          "score": 1.0,
+          "reason": "Empathetic acknowledgment with professional and supportive tone"
+        },
+        {
+          "transcript_snippet": "You're being difficult. Just pay what you owe or we'll garnish your wages. Stop making excuses.",
+          "score": 0.0,
+          "reason": "Hostile, threatening tone with no empathy - violates NCA standards"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "call_closure",
+      "description": "Agent properly closes the call with summary and next steps",
+      "weight": 0.15,
+      "scoring_type": "binary",
+      "rubric": "1.0 if agent summarizes agreed actions, confirms payment details, and provides contact information, 0.0 otherwise",
+      "examples": [
+        {
+          "transcript_snippet": "To summarize, you'll make a payment of $200 on the 15th. I'll send you a confirmation email with these details. If you have any questions, you can reach us at 1-800-555-0123. Thank you for your time.",
+          "score": 1.0,
+          "reason": "Clear summary of actions, confirmation details, and contact information provided"
+        },
+        {
+          "transcript_snippet": "Alright, bye.",
+          "score": 0.0,
+          "reason": "No summary, no confirmation, and abrupt ending"
+        }
+      ]
+    }
+  ]
+}
