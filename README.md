@@ -7,45 +7,9 @@
 
 Automated call QA scoring pipeline using GPT-4o with structured outputs. Scores call transcripts against configurable scorecards, validates results with Pydantic, and upserts to SQL.
 
-![Screenshot](screenshot.jpg)
-
 ## Architecture
 
-```
-┌─────────────────┐
-│ Service Bus     │
-│ Queue Trigger   │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Azure Function: queue_worker.py                             │
-│  - Deserializes ScoreRequest                                │
-│  - Loads transcript (text or blob URL)                       │
-│  - Loads scorecard from JSON                                │
-│  - Calls scoring.score_transcript()                         │
-│  - Validates with validation.validate_scoring_result()      │
-│  - Upserts to SQL with ingest.ingest_scores()               │
-└─────────────────────────────────────────────────────────────┘
-         │
-         ├─────────────────────────────────────────────────────┐
-         │                                                     │
-         ▼                                                     ▼
-┌─────────────────┐                                   ┌─────────────────┐
-│ Azure OpenAI    │                                   │   SQLAlchemy    │
-│ GPT-4o          │                                   │   Async Engine  │
-│ (temperature=0)│                                   └─────────────────┘
-└─────────────────┘
-         │
-         ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Scoring Logic (src/callscore/scoring.py)                    │
-│  - asyncio.gather() for concurrent criterion scoring        │
-│  - Each criterion: separate LLM call with few-shot examples  │
-│  - Structured JSON output → Pydantic validation             │
-│  - Returns ScoringResult with weighted total                 │
-└─────────────────────────────────────────────────────────────┘
-```
+![Screenshot](screenshot.jpg)
 
 ## Quickstart
 
