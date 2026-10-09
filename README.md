@@ -7,6 +7,8 @@
 
 Automated call QA scoring pipeline using GPT-4o with structured outputs. Scores call transcripts against configurable scorecards, validates results with Pydantic, and upserts to SQL.
 
+![Screenshot](screenshot.jpg)
+
 ## Architecture
 
 ```
